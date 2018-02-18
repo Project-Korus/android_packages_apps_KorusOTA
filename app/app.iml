@@ -98,6 +98,5 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 27 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Gradle: __local_aars__:/home/kongjak/Work/android/aosp/korus/1.0/packages/apps/KorusOTA/app/libs/cwac-wakeful-1.0.5.jar:unspecified@jar" level="project" />
   </component>
 </module>
