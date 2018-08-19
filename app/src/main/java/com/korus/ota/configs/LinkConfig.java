@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.fusionjack.slimota.configs;
+package com.korus.ota.configs;
 
 import android.content.Context;
 
-import com.fusionjack.slimota.xml.OTALink;
-import com.fusionjack.slimota.xml.OTAParser;
-import com.fusionjack.slimota.utils.OTAUtils;
+import com.korus.ota.xml.OTALink;
+import com.korus.ota.xml.OTAParser;
+import com.korus.ota.utils.OTAUtils;
 
 import org.json.JSONArray;
 import org.json.JSONException;
