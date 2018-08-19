@@ -24,9 +24,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 
-import com.commonsware.cwac.wakeful.WakefulIntentService;
 import com.korus.ota.R;
-import com.korus.ota.scheduler.OTAListener;
+import com.korus.ota.tasks.OTAService;
 import com.korus.ota.utils.OTAUtils;
 
 import java.text.DateFormat;

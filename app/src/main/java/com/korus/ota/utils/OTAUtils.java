@@ -24,6 +24,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.korus.ota.configs.OTAConfig;
+import com.korus.ota.R;
 
 import java.io.BufferedReader;
 import java.io.File;
