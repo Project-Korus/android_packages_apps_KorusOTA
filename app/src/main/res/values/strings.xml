@@ -44,10 +44,10 @@
     <string name="autoupdate_disabled">Automatic update is disabled</string>
 
     <!-- Notification -->
-    <string name="notification_title">ResurrectionRemix OS update</string>
+    <string name="notification_title">Korus Project update</string>
     <string name="notification_message">A new version is available!</string>
-    <string name="resurrection_channel">ResurrectionOTA notifications</string>
-    <string name="resurrection_channel_description">Notifications about new ResurrectionRemix OS updates</string>
+    <string name="korus_channel">KorusOTA notifications</string>
+    <string name="korus_channel_description">Notifications about new Korus Project updates</string>
 
     <!-- Dialog -->
     <string name="dialog_message">Checking for ROM updates, please wait…</string>

@@ -158,9 +158,9 @@ public class CheckUpdateTask extends AsyncTask<Context, Void, OTADevice> {
             NotificationManager notificationManager =
                     (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
             int notifyID = 1;
-            String id = "resurrectionota_channel";
-            CharSequence name = context.getString(R.string.resurrection_channel);
-            String description = context.getString(R.string.resurrection_channel_description);
+            String id = "korusota_channel";
+            CharSequence name = context.getString(R.string.korus_channel);
+            String description = context.getString(R.string.korus_channel_description);
             int importance = NotificationManager.IMPORTANCE_LOW;
             NotificationChannel mChannel = new NotificationChannel(id, name, importance);
             mChannel.setDescription(description);
