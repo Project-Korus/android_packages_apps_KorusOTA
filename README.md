@@ -38,14 +38,8 @@ Credits
 -------
 * [Slim team](http://slimroms.net/)
   * For the original idea of the SlimCenter and app icon
-<<<<<<< HEAD
-* [CommonsWare Android Components](https://github.com/commonsguy/cwac-wakeful)
-  * For the wakeful intent service that is used in this app
-
 Screenshots
 -----------
 <img alt="Screenshot"
    width="270" height="480" 
    src="https://raw.githubusercontent.com/SlimSaber/packages_apps_SlimOTA/lp5.0/screenshots/Screenshot_20150505_1317.png" />
-=======
->>>>>>> cdb887f... ResurrectionOTA: rework automatic updates with JobService
