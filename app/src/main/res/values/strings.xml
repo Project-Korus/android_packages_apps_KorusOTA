@@ -18,8 +18,8 @@
 <resources>
 
     <!-- App -->
-    <string name="app_name">KorusOTA</string>
-    <string name="app_title">KorusOTA</string>
+    <string name="app_name">Korus OTA</string>
+    <string name="app_title">Korus OTA</string>
 
     <!-- Categories -->
     <string name="ota_category">OTA</string>
