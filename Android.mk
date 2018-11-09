@@ -1,12 +1,11 @@
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
-ifneq ($(ANDROID_BUILD_TOP),)
-    $(shell cp -u $(ANDROID_BUILD_TOP)/vendor/korus/ota/ota_conf $(LOCAL_PATH)/app/src/main/assets/)
-endif
+$(shell cp -u ./vendor/korus/ota/ota_conf $(LOCAL_PATH)/app/src/main/assets/)
 
 LOCAL_MODULE_TAGS := optional
 LOCAL_PACKAGE_NAME := KorusOTA
+LOCAL_PRIVATE_PLATFORM_APIS := true
 LOCAL_CERTIFICATE := platform
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_DEX_PREOPT := false
