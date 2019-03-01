@@ -26,7 +26,7 @@
     <string name="links_category">Links</string>
 
     <!-- ROM info -->
-    <string name="latest_version">Update available!\nLatest version: %1$s</string>
+    <string name="latest_version">Click and download %1$s</string>
     <string name="unknown">Unknown</string>
     <string name="system_uptodate">Your system is up to date</string>
 

@@ -47,6 +47,10 @@ public class KorusOTAFragment extends PreferenceFragment implements
     private static final String KEY_UPDATE_INTERVAL = "key_update_interval";
     private static final String CATEGORY_LINKS = "category_links";
 
+    private static final String ROM_ID = "rom";
+    private static String ROM_URL;
+    private static int LATEST;
+
     private PreferenceScreen mRomInfo;
     private PreferenceScreen mCheckUpdate;
     private ListPreference mUpdateInterval;
@@ -84,15 +88,21 @@ public class KorusOTAFragment extends PreferenceFragment implements
         for (OTALink link : links) {
             String id = link.getId();
             PreferenceScreen linkPref = (PreferenceScreen) getPreferenceScreen().findPreference(id);
-            if (linkPref == null && mLinksCategory != null) {
-                linkPref = getPreferenceManager().createPreferenceScreen(getActivity());
-                linkPref.setKey(id);
-                mLinksCategory.addPreference(linkPref);
-            }
-            if (linkPref != null) {
-                String title = link.getTitle();
-                linkPref.setTitle(title.isEmpty() ? id : title);
-                linkPref.setSummary(link.getDescription());
+            if (id.equalsIgnoreCase(ROM_ID)) {
+                if (LATEST==0){
+                    ROM_URL = link.getUrl();
+                }
+            } else {
+                if (linkPref == null && mLinksCategory != null) {
+                    linkPref = getPreferenceManager().createPreferenceScreen(getActivity());
+                    linkPref.setKey(id);
+                    mLinksCategory.addPreference(linkPref);
+                }
+                if (linkPref != null) {
+                    String title = link.getTitle();
+                    linkPref.setTitle(title.isEmpty() ? id : title);
+                    linkPref.setSummary(link.getDescription());
+                }
             }
         }
     }
@@ -101,18 +111,21 @@ public class KorusOTAFragment extends PreferenceFragment implements
         if (mRomInfo != null) {
             String fullLocalVersion = OTAVersion.getFullLocalVersion(getActivity());
             String shortLocalVersion = OTAVersion.extractVersionFrom(fullLocalVersion, getActivity());
-            mRomInfo.setTitle(fullLocalVersion);
+            mRomInfo.setTitle(getActivity().getResources().getString(R.string.update_available));
 
             String prefix = getActivity().getResources().getString(R.string.latest_version);
             String fullLatestVersion = AppConfig.getFullLatestVersion(getActivity());
             String shortLatestVersion = OTAVersion.extractVersionFrom(fullLatestVersion, getActivity());
             if (fullLatestVersion.isEmpty()) {
                 fullLatestVersion = getActivity().getResources().getString(R.string.unknown);
-                mRomInfo.setSummary(String.format(prefix, fullLatestVersion));
+                mRomInfo.setSummary(fullLatestVersion);
+                LATEST = 0;
             } else if (!OTAVersion.compareVersion(shortLatestVersion, shortLocalVersion, getActivity())) {
                 mRomInfo.setSummary(getActivity().getResources().getString(R.string.system_uptodate));
+                LATEST = 1;
             } else {
                 mRomInfo.setSummary(String.format(prefix, fullLatestVersion));
+                LATEST = 0;
             }
         }
     }
@@ -131,7 +144,7 @@ public class KorusOTAFragment extends PreferenceFragment implements
     }
 
     @Override
-     public void onResume() {
+    public void onResume() {
         super.onResume();
         getPreferenceScreen().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
         updatePreferences();
@@ -166,6 +179,10 @@ public class KorusOTAFragment extends PreferenceFragment implements
                     mTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, getActivity());
                 }
                 return true;
+            case KEY_ROM_INFO:
+                if (LATEST==0){
+                    OTAUtils.launchUrl(ROM_URL, getActivity());
+                }
             default:
                 OTALink link = LinkConfig.getInstance().findLink(key, getActivity());
                 if (link != null) {
