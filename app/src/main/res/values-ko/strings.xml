@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2015 Chandra Poerwanto
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+
+    <!-- App -->
+    <string name="app_name">Korus OTA</string>
+    <string name="app_title">Korus OTA</string>
+
+    <!-- Categories -->
+    <string name="ota_category">OTA</string>
+    <string name="links_category">링크</string>
+
+    <!-- ROM info -->
+    <string name="latest_version">업데이트가 존재합니다!\n최신버전: %1$s</string>
+    <string name="unknown">알 수 없음</string>
+    <string name="system_uptodate">최신버전입니다.</string>
+
+    <!-- Check update -->
+    <string name="check_update_title">업데이트 확인</string>
+    <string name="last_check_summary">마지막 확인시기: %1$s</string>
+    <string name="last_check_never">없음</string>
+    <string name="check_update_failed">업데이트를 확인할 수 없습니다.</string>
+    <string name="update_available">업데이트가 존재합니다!</string>
+    <string name="no_update_available">업데이트가 없습니다</string>
+
+    <!-- Update interval -->
+    <string name="interval_title">자동 업데이트 확인</string>
+    <string name="autoupdate_enabled">자동 업데이트가 활성화 되어있습니다.</string>
+    <string name="autoupdate_disabled">자동 업데이트가 비활성화 되어있습니다.</string>
+
+    <!-- Notification -->
+    <string name="notification_title">Korus Project 업데이트</string>
+    <string name="notification_message">최신버전이 존재합니다!</string>
+    <string name="korus_channel">KorusOTA 알림</string>
+    <string name="korus_channel_description">Korus Project 업데이트에 대한 알림입니다</string>
+
+    <!-- Dialog -->
+    <string name="dialog_message">업데이트를 확인중입니다. 잠시 기다려주세요…</string>
+
+    <!-- Toast -->
+    <string name="toast_message">설치된 웹 브라우저가 없습니다.</string>
+</resources>
